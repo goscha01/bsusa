@@ -175,20 +175,20 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {officers.map((o) => (
-              <div key={o.name} className="bg-mist rounded-2xl p-8 flex flex-col gap-4">
+              <div key={o.name} className="bg-mist rounded-2xl overflow-hidden flex flex-col">
                 {o.photo ? (
                   <img
                     src={o.photo}
                     alt={`${o.name}, ${o.role}`}
-                    className="w-24 h-24 rounded-full object-cover ring-4 ring-sunrise-tint"
+                    className="w-full aspect-[4/5] object-cover"
                   />
                 ) : (
-                  <div className="w-24 h-24 bg-sunrise-tint rounded-full flex items-center justify-center">
-                    <UserCircle className="w-12 h-12 text-sunrise-dark" aria-hidden="true" />
+                  <div className="w-full aspect-[4/5] bg-sunrise-tint flex items-center justify-center">
+                    <UserCircle className="w-24 h-24 text-sunrise-dark" aria-hidden="true" />
                   </div>
                 )}
-                <div className="flex flex-col gap-0.5">
-                  <h3 className="text-[20px] font-extrabold text-navy">{o.name}</h3>
+                <div className="flex flex-col gap-1 p-7">
+                  <h3 className="text-[22px] font-extrabold text-navy">{o.name}</h3>
                   <p className="text-sm text-slate">{o.role}</p>
                 </div>
               </div>
