@@ -1,156 +1,162 @@
 import React from 'react';
 import Link from 'next/link';
-import { Shield, Target, Users, Award, BookOpen, TrendingUp } from 'lucide-react';
+import Head from 'next/head';
+import { Target, Users, HeartHandshake, ShieldCheck } from 'lucide-react';
 
 export default function About() {
-  const benefits = [
-    {
-      icon: Shield,
-      title: "Professional credibility boost",
-              description: "Gain instant trust with the official BSUSA Certified seal and membership status"
-    },
-    {
-      icon: Award,
-              title: "Official BSUSA seal for marketing",
-      description: "Display your certification on your website, business cards, uniforms, and social media to show customers you're a verified, trusted provider"
-    },
-    {
-      icon: Users,
-      title: "Inclusion in our member directory",
-              description: "Get discovered by potential customers searching for vetted and reliable service providers"
-    },
-    {
-      icon: Award,
-      title: "Access to awards and recognition programs",
-      description: "Compete for industry recognition based on service quality and customer satisfaction"
-    },
-    {
-      icon: BookOpen,
-      title: "Exclusive resources and training",
-      description: "Access member-only training materials, business tools, and professional development opportunities"
-    }
-  ];
-
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            About Better Start USA Foundation, Inc.
-          </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
-            Promoting trust, transparency, and quality in services since 2024.
-          </p>
-        </div>
-      </section>
+    <>
+      <Head>
+        <title>About — Better Start USA Foundation, Inc.</title>
+        <meta
+          name="description"
+          content="Better Start USA Foundation, Inc. is a Florida-registered nonprofit providing adult education to immigrants and refugees in the United States."
+        />
+      </Head>
 
-      {/* Main Content */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Intro */}
-          <div className="text-center mb-16">
-            <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-10 h-10 text-primary" />
-            </div>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-              The Better Start USA Foundation, Inc. (BSUSA) is a professional organization dedicated to raising the standards of trust, 
-              transparency, and quality across the services industry. We help service providers—from cleaners to handymen, landscapers, and beyond—earn recognition, grow their 
-              skills, and stand out from the competition.
+      <div className="min-h-screen">
+        <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              About Better Start USA Foundation, Inc.
+            </h1>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95">
+              A nonprofit helping immigrants and refugees get a foothold in American life and work.
             </p>
           </div>
+        </section>
 
-          {/* Mission Statement */}
-          <div className="card mb-16 text-center">
-            <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Target className="w-8 h-8 text-secondary" />
+        <section className="py-16">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="card mb-10 text-center">
+              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Target className="w-8 h-8 text-secondary" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Our mission</h2>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                We provide adult education to immigrants and refugees in the U.S.: workshops on
+                American life and work, career guidance, hands-on training in trades, job readiness
+                and self-employment skills, so they can become self-sufficient.
+              </p>
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
-              Our mission is to set and uphold the highest standards in services, ensuring both 
-              clients and professionals benefit from exceptional service, integrity, and reliability.
-            </p>
-          </div>
 
-          {/* Benefits Section */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-              Benefits for Members
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="card hover:shadow-xl transition-shadow">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <benefit.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                        {benefit.title}
-                      </h3>
-                      <p className="text-gray-600">
-                        {benefit.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="mb-10">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Who we serve</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We work with adults who have recently arrived in the United States as immigrants or
+                refugees and are trying to build a stable life here. Many have skills and work
+                experience from their home country but face unfamiliar systems: how American
+                workplaces operate, how licensing and credentialing works, where to go for everyday
+                services, how to find a first job, how to start a small business of their own.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Our programs are free to participants and open regardless of language background,
+                immigration pathway, or prior schooling.
+              </p>
             </div>
-          </div>
 
-          {/* Values Section */}
-          <div className="card mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Core Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-primary" />
+            <div className="mb-10">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">What we do</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We run four programs that cover the main stages a newcomer passes through on the way
+                to self-sufficiency:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                <li>
+                  <Link href="/programs/newcomer-orientation" className="text-primary hover:underline font-medium">
+                    Newcomer Orientation
+                  </Link>{' '}
+                  — understanding how everyday life works here.
+                </li>
+                <li>
+                  <Link href="/programs/career-pathways" className="text-primary hover:underline font-medium">
+                    Career Pathways
+                  </Link>{' '}
+                  — assessing skills and choosing a realistic direction.
+                </li>
+                <li>
+                  <Link href="/programs/hands-on-trade-training" className="text-primary hover:underline font-medium">
+                    Hands-On Trade Training
+                  </Link>{' '}
+                  — practical workshops in accessible trades.
+                </li>
+                <li>
+                  <Link href="/programs/small-business-support" className="text-primary hover:underline font-medium">
+                    Small Business Support
+                  </Link>{' '}
+                  — getting a one-person business up and running legally.
+                </li>
+              </ul>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+              <div className="card text-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <HeartHandshake className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Trust</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Practical</h3>
                 <p className="text-gray-600 text-sm">
-                  Building customer confidence through verified credentials, proof of insurance, and a track record of quality service
+                  Everything we teach is something a person can use in the next week — not theory, not
+                  a certificate for its own sake.
                 </p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-8 h-8 text-secondary" />
+              <div className="card text-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Users className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Excellence</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Peer-supported</h3>
                 <p className="text-gray-600 text-sm">
-                  Maintaining the highest standards in service quality, professionalism, and customer care
+                  People who arrived two years ago mentor people who arrived last month. That is how
+                  the knowledge actually transfers.
                 </p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-primary" />
+              <div className="card text-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <ShieldCheck className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Community</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Safe and legal</h3>
                 <p className="text-gray-600 text-sm">
-                  Supporting and connecting service professionals across multiple industries to share knowledge and grow together
+                  Trade training is taught by experienced practitioners with a focus on safety.
+                  Business support covers licensing and insurance from the start.
                 </p>
               </div>
             </div>
-          </div>
 
-          {/* CTA Section */}
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Ready to Join Our Community?
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Become part of the Better Start USA Foundation, Inc. and start building your professional reputation today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/login?mode=signup" className="btn-primary">
-                Join BSUSA Now
-              </Link>
-              <Link href="/contact" className="btn-outline">
-                Contact Us
-              </Link>
+            <div className="card mb-10">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">Registration</h2>
+              <p className="text-gray-700">
+                <strong>Legal name:</strong> Better Start USA Foundation, Inc.
+                <br />
+                <strong>State of registration:</strong> Florida.
+                <br />
+                <strong>Contact:</strong>{' '}
+                <a href="mailto:info@bsusa.org" className="text-primary hover:underline">
+                  info@bsusa.org
+                </a>
+              </p>
+              <p className="text-gray-600 text-sm mt-3">
+                Annual reports and additional registration documents are available on request from
+                info@bsusa.org and will be posted here as they are issued.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Get involved</h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Donate, volunteer, or partner with us to help a newcomer get started.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/ways-to-help#donate" className="btn-primary">
+                  Donate
+                </Link>
+                <Link href="/contact" className="btn-outline">
+                  Contact us
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
 }

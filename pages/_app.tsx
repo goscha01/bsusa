@@ -8,8 +8,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>BSUSA - Better Start USA Foundation, Inc.</title>
-        <meta name="description" content="Professional cleaning services association providing training, certification, and industry standards." />
+        <title>Better Start USA Foundation, Inc. — Adult education for immigrants and refugees</title>
+        <meta name="description" content="Better Start USA Foundation, Inc. (BSUSA) provides adult education to immigrants and refugees in the U.S.: orientation to American life and work, career guidance, hands-on trade training, and small business support." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         {/* Favicon */}
