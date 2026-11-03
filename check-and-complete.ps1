@@ -1,8 +1,8 @@
 # Check and Complete AWS Setup Script
 # This script checks both buckets and completes the setup for the working one
 
-$Bucket1 = "tca-website-20250813-145334"
-$Bucket2 = "tca-website-20250813-145945"
+$Bucket1 = "bsusa-website-20250813-145334"
+$Bucket2 = "bsusa-website-20250813-145945"
 $Region = "us-east-1"
 
 Write-Host "Checking AWS Setup Status..." -ForegroundColor Green
@@ -73,7 +73,7 @@ if ($choice -eq "1") {
     $SelectedBucket = $Bucket2
     Write-Host "Using Bucket 2: $SelectedBucket" -ForegroundColor Green
 } elseif ($choice -eq "3") {
-    $SelectedBucket = "tca-website-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
+    $SelectedBucket = "bsusa-website-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
     Write-Host "Creating new bucket: $SelectedBucket" -ForegroundColor Green
     aws s3 mb "s3://$SelectedBucket" --region $Region
 } else {
@@ -128,7 +128,7 @@ $callerReference = Get-Date -Format 'yyyyMMdd-HHmmss'
 # Create CloudFront distribution config JSON
 $distributionConfig = @{
     CallerReference = $callerReference
-    Comment = "TCA Website Distribution"
+    Comment = "BSUSA Website Distribution"
     DefaultRootObject = "index.html"
     Origins = @{
         Quantity = 1

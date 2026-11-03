@@ -12,22 +12,22 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Image 
-                src="/tca-logo_dark.svg" 
-                alt="TCA Logo" 
+                src="/bsusa-logo_dark.svg" 
+                alt="BSUSA Logo" 
                 width={120} 
                 height={40} 
                 className="h-10 w-auto"
               />
               <div className="flex items-center space-x-2">
-                <span className="text-2xl font-bold leading-none">TSA</span>
+                <span className="text-2xl font-bold leading-none">BSUSA</span>
                 <div className="flex flex-col text-xs text-gray-400 leading-tight justify-center">
-                  <span>Trusted Services</span>
-                  <span>Association</span>
+                  <span>Better Start USA</span>
+                  <span>Foundation, Inc.</span>
                 </div>
               </div>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
-              The Trusted Services Association promotes trust, transparency, and quality in the services industry. 
+              The Better Start USA Foundation, Inc. promotes trust, transparency, and quality in the services industry. 
               Join our community of trusted professionals.
             </p>
             <div className="flex space-x-4">
@@ -93,7 +93,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Trusted Services Association. All rights reserved.
+            © {new Date().getFullYear()} Better Start USA Foundation, Inc.. All rights reserved.
           </p>
         </div>
       </div>

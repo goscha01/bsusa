@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# TCA Website AWS Deployment Script
+# BSUSA Website AWS Deployment Script
 # This script sets up AWS resources for automatic deployment from GitHub to S3
 
 set -e
 
 # Configuration - Update these variables
-BUCKET_NAME="tca-website-$(date +%s)"
+BUCKET_NAME="bsusa-website-$(date +%s)"
 REGION="us-east-1"
 DOMAIN_NAME="your-domain.com"  # Update with your actual domain
-GITHUB_REPO="goscha01/tca"
+GITHUB_REPO="goscha01/bsusa"
 GITHUB_BRANCH="main"
 
 # Colors for output
@@ -18,7 +18,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-echo -e "${GREEN}🚀 Starting TCA Website AWS Deployment Setup...${NC}"
+echo -e "${GREEN}🚀 Starting BSUSA Website AWS Deployment Setup...${NC}"
 
 # Check if AWS CLI is installed
 if ! command -v aws &> /dev/null; then
@@ -71,7 +71,7 @@ echo -e "${YELLOW}🗑️ Creating CloudFront distribution${NC}"
 aws cloudfront create-distribution \
     --distribution-config '{
         "CallerReference": "'$(date +%s)'",
-        "Comment": "TCA Website Distribution",
+        "Comment": "BSUSA Website Distribution",
         "DefaultRootObject": "index.html",
         "Origins": {
             "Quantity": 1,
@@ -111,7 +111,7 @@ DISTRIBUTION_ID=$(cat cloudfront-distribution.json | grep -o '"Id": "[^"]*"' | c
 CLOUDFRONT_DOMAIN=$(cat cloudfront-distribution.json | grep -o '"DomainName": "[^"]*"' | cut -d'"' -f4)
 
 echo -e "${YELLOW}🔑 Creating IAM user for GitHub Actions${NC}"
-aws iam create-user --user-name tca-github-actions
+aws iam create-user --user-name bsusa-github-actions
 
 echo -e "${YELLOW}📋 Creating IAM policy for S3 and CloudFront access${NC}"
 cat > iam-policy.json << EOF
@@ -145,16 +145,16 @@ cat > iam-policy.json << EOF
 EOF
 
 aws iam create-policy \
-    --policy-name TCAGitHubActionsPolicy \
+    --policy-name BSUSAGitHubActionsPolicy \
     --policy-document file://iam-policy.json
 
 echo -e "${YELLOW}🔗 Attaching policy to IAM user${NC}"
 aws iam attach-user-policy \
-    --user-name tca-github-actions \
-    --policy-arn arn:aws:iam::$(aws sts get-caller-identity --query Account --output text):policy/TCAGitHubActionsPolicy
+    --user-name bsusa-github-actions \
+    --policy-arn arn:aws:iam::$(aws sts get-caller-identity --query Account --output text):policy/BSUSAGitHubActionsPolicy
 
 echo -e "${YELLOW}🔑 Creating access keys for GitHub Actions${NC}"
-aws iam create-access-key --user-name tca-github-actions > access-keys.json
+aws iam create-access-key --user-name bsusa-github-actions > access-keys.json
 
 # Extract access key and secret
 ACCESS_KEY_ID=$(cat access-keys.json | grep -o '"AccessKeyId": "[^"]*"' | cut -d'"' -f4)

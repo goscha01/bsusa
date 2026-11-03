@@ -23,17 +23,17 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <Image 
-                src="/tca-logo.svg" 
-                alt="TCA Logo" 
+                src="/bsusa-logo.svg" 
+                alt="BSUSA Logo" 
                 width={120} 
                 height={40} 
                 className="h-10 w-auto"
               />
               <div className="flex items-center space-x-2">
-                <span className="text-2xl font-bold text-gray-900 leading-none">TSA</span>
+                <span className="text-2xl font-bold text-gray-900 leading-none">BSUSA</span>
                 <div className="flex flex-col text-xs text-gray-600 leading-tight justify-center">
-                  <span>Trusted Services</span>
-                  <span>Association</span>
+                  <span>Better Start USA</span>
+                  <span>Foundation, Inc.</span>
                 </div>
               </div>
             </Link>
@@ -84,7 +84,7 @@ export default function Header() {
                   Sign In
                 </Link>
                 <Link href="/membership" className="btn-primary">
-                  Join TSA
+                  Join BSUSA
                 </Link>
               </>
             )}
@@ -187,7 +187,7 @@ export default function Header() {
                   className="btn-primary block text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Join TSA
+                  Join BSUSA
                 </Link>
               </div>
             )}

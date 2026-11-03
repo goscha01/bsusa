@@ -1,4 +1,4 @@
--- Diagnose 406 Error for TCA Application
+-- Diagnose 406 Error for BSUSA Application
 -- Run this in your Supabase SQL Editor
 
 -- 1. Check if the users table exists and has the right structure

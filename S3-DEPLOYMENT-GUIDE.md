@@ -1,4 +1,4 @@
-# S3 Deployment Guide for TCA Website
+# S3 Deployment Guide for BSUSA Website
 
 ## 🚀 **Quick Fix Applied**
 
@@ -143,4 +143,4 @@ The website is now **fully configured for S3 deployment** with working Supabase 
 2. Test all functionality
 3. Configure custom domain if desired
 
-🎉 **Your TCA website will work perfectly on S3!**
+🎉 **Your BSUSA website will work perfectly on S3!**

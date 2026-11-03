@@ -1,5 +1,5 @@
 # Complete Deployment Script - Build, Git Push, and S3 Upload
-Write-Host "Starting Complete TCA Website Deployment..." -ForegroundColor Green
+Write-Host "Starting Complete BSUSA Website Deployment..." -ForegroundColor Green
 
 # Load environment variables from .env.local
 Write-Host "Loading environment variables..." -ForegroundColor Yellow

@@ -1,4 +1,4 @@
--- Database Diagnostic Script for TCA
+-- Database Diagnostic Script for BSUSA
 -- Run this to see what's currently in your database
 
 -- Check if tables exist

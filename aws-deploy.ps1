@@ -1,4 +1,4 @@
-# TCA Website AWS Deployment Script (PowerShell)
+# BSUSA Website AWS Deployment Script (PowerShell)
 # This script sets up AWS resources for automatic deployment from GitHub to S3
 
 param(
@@ -6,10 +6,10 @@ param(
 )
 
 # Configuration
-$BucketName = "tca-website-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
+$BucketName = "bsusa-website-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
 $GitHubBranch = "main"
 
-Write-Host "Starting TCA Website AWS Deployment Setup..." -ForegroundColor Green
+Write-Host "Starting BSUSA Website AWS Deployment Setup..." -ForegroundColor Green
 
 # Check if AWS CLI is installed
 try {
@@ -62,7 +62,7 @@ Write-Host "Creating CloudFront distribution" -ForegroundColor Yellow
 $callerReference = Get-Date -Format 'yyyyMMdd-HHmmss'
 $distributionConfig = @{
     CallerReference = $callerReference
-    Comment = "TCA Website Distribution"
+    Comment = "BSUSA Website Distribution"
     DefaultRootObject = "index.html"
     Origins = @{
         Quantity = 1
@@ -106,7 +106,7 @@ $DistributionId = $cloudfrontResponse.Distribution.Id
 $CloudFrontDomain = $cloudfrontResponse.Distribution.DomainName
 
 Write-Host "Creating IAM user for GitHub Actions" -ForegroundColor Yellow
-aws iam create-user --user-name "tca-github-actions"
+aws iam create-user --user-name "bsusa-github-actions"
 
 Write-Host "Creating IAM policy for S3 and CloudFront access" -ForegroundColor Yellow
 $iamPolicy = @{
@@ -138,14 +138,14 @@ $iamPolicy = @{
 } | ConvertTo-Json
 
 $iamPolicy | Out-File -FilePath "iam-policy.json" -Encoding UTF8 -NoNewline
-aws iam create-policy --policy-name "TCAGitHubActionsPolicy" --policy-document file://iam-policy.json
+aws iam create-policy --policy-name "BSUSAGitHubActionsPolicy" --policy-document file://iam-policy.json
 
 Write-Host "Attaching policy to IAM user" -ForegroundColor Yellow
 $accountId = (aws sts get-caller-identity --query Account --output text).Trim()
-aws iam attach-user-policy --user-name "tca-github-actions" --policy-arn "arn:aws:iam::$accountId:policy/TCAGitHubActionsPolicy"
+aws iam attach-user-policy --user-name "bsusa-github-actions" --policy-arn "arn:aws:iam::$accountId:policy/BSUSAGitHubActionsPolicy"
 
 Write-Host "Creating access keys for GitHub Actions" -ForegroundColor Yellow
-aws iam create-access-key --user-name "tca-github-actions" | Out-File -FilePath "access-keys.json" -Encoding UTF8
+aws iam create-access-key --user-name "bsusa-github-actions" | Out-File -FilePath "access-keys.json" -Encoding UTF8
 
 # Extract access key and secret
 $accessKeys = Get-Content "access-keys.json" | ConvertFrom-Json

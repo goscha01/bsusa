@@ -1,4 +1,4 @@
--- Fix RLS Policies for TCA
+-- Fix RLS Policies for BSUSA
 -- Run this script in your Supabase SQL Editor to fix the authorization issues
 
 -- Step 1: Create users table if it doesn't exist

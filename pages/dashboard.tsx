@@ -468,7 +468,7 @@ export default function Dashboard() {
             Welcome back, {user.company_name || 'Member'}!
           </h1>
           <p className="mt-2 text-gray-600">
-            Manage your TCA membership, upload assets, and access exclusive resources.
+            Manage your BSUSA membership, upload assets, and access exclusive resources.
           </p>
         </div>
 
@@ -1364,20 +1364,20 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* TCA Seal */}
+        {/* BSUSA Seal */}
         <div className="mt-8">
           <div className="card">
             <div className="flex items-center space-x-3 mb-4">
               <Shield className="h-6 w-6 text-primary" />
-              <h2 className="text-xl font-semibold text-gray-900">TCA Seal</h2>
+              <h2 className="text-xl font-semibold text-gray-900">BSUSA Seal</h2>
             </div>
             <p className="text-gray-600 text-sm mb-4">
-              Download your official TCA seal to display on your website and marketing materials.
+              Download your official BSUSA seal to display on your website and marketing materials.
             </p>
             <div className="space-y-3">
               <a 
                 href="/TRUSTED CLEANERS Logo.png" 
-                download="TCA-Seal.png"
+                download="BSUSA-Seal.png"
                 className="btn-outline w-full flex items-center justify-center space-x-2"
               >
                 <Download className="h-5 w-5" />
@@ -1387,7 +1387,7 @@ export default function Dashboard() {
                 onClick={() => {
                   const htmlCode = `<a href="https://trustedcleaners.org" target="_blank" rel="noopener noreferrer">
   <img src="https://trustedcleaners.org/TRUSTED%20CLEANERS%20Logo.png" 
-       alt="Trusted Cleaners Association Member" 
+       alt="Better Start USA Foundation, Inc. Member" 
        style="max-width: 200px; height: auto;">
 </a>`;
                   navigator.clipboard.writeText(htmlCode);
@@ -1410,7 +1410,7 @@ export default function Dashboard() {
               <h2 className="text-xl font-semibold text-gray-900">Training Access</h2>
             </div>
             <p className="text-gray-600 text-sm mb-4">
-              Access exclusive training materials and courses designed for TCA members.
+              Access exclusive training materials and courses designed for BSUSA members.
             </p>
             <Link href="/training" className="btn-primary">
               Access Training Library

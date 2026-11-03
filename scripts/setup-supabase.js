@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🚀 TCA Supabase Setup Helper\n');
+console.log('🚀 BSUSA Supabase Setup Helper\n');
 
 // Check if .env.local exists
 const envPath = path.join(process.cwd(), '.env.local');
@@ -43,7 +43,7 @@ console.log('1. Make sure your Supabase project is running');
 console.log('2. Run the database schema: supabase/schema.sql');
 console.log('3. Start your dev server: npm run dev');
 console.log('4. Go to http://localhost:3000/login');
-console.log('5. Click "Join TCA Now" to create a test account\n');
+console.log('5. Click "Join BSUSA Now" to create a test account\n');
 
 console.log('🔧 To run the database schema:');
 console.log('1. Go to your Supabase dashboard → SQL Editor');

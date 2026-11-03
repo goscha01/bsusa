@@ -106,10 +106,10 @@ export default function Awards() {
       <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            TSA Excellence Awards
+            BSUSA Excellence Awards
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-            Each year, the Trusted Services Association recognizes outstanding service professionals based on customer reviews, community feedback, and service quality.
+            Each year, the Better Start USA Foundation, Inc. recognizes outstanding service professionals based on customer reviews, community feedback, and service quality.
           </p>
           <div className="flex items-center justify-center space-x-2 text-lg">
             <Trophy className="w-6 h-6 text-yellow-300" />
@@ -162,7 +162,7 @@ export default function Awards() {
               Nominate Your Business
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Ready to be recognized? Submit your nomination for the TSA Excellence Awards.
+              Ready to be recognized? Submit your nomination for the BSUSA Excellence Awards.
             </p>
           </div>
 
@@ -313,7 +313,7 @@ export default function Awards() {
                     <h4 className="font-medium text-blue-900 mb-1">Nomination Fee: $19</h4>
                     <p className="text-sm text-blue-800">
                       The nomination fee covers the review process and evaluation of your business. 
-                      Winners receive a prestigious TSA Excellence Award certificate and recognition.
+                      Winners receive a prestigious BSUSA Excellence Award certificate and recognition.
                     </p>
                   </div>
                 </div>
@@ -405,14 +405,14 @@ export default function Awards() {
             Ready to Be Recognized?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Submit your nomination today and join the ranks of TSA Excellence Award winners.
+            Submit your nomination today and join the ranks of BSUSA Excellence Award winners.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="#nomination" className="btn-primary bg-white text-secondary hover:bg-gray-100">
               Nominate Your Business
             </Link>
             <Link href="/login?mode=signup" className="btn-outline border-white text-white hover:bg-white hover:text-secondary">
-              Join TSA First
+              Join BSUSA First
             </Link>
           </div>
         </div>

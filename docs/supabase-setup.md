@@ -1,6 +1,6 @@
-# Supabase Setup Guide for TCA
+# Supabase Setup Guide for BSUSA
 
-This guide will walk you through setting up Supabase for the Trusted Cleaners Association (TCA) application.
+This guide will walk you through setting up Supabase for the Better Start USA Foundation, Inc. (BSUSA) application.
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ This guide will walk you through setting up Supabase for the Trusted Cleaners As
 2. Click "New Project"
 3. Choose your organization
 4. Enter project details:
-   - **Name**: `tca-website`
+   - **Name**: `bsusa-website`
    - **Database Password**: Generate a strong password
    - **Region**: Choose closest to your users
 5. Click "Create new project"
@@ -47,30 +47,30 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
 ## Step 5: Configure Storage Buckets
 
 1. Go to **Storage** in your Supabase dashboard
-2. Create a new bucket called `tca-assets`
+2. Create a new bucket called `bsusa-assets`
 3. Set the bucket to **Public** (for logo access)
 4. Configure CORS policies if needed
 
 ### Storage Bucket Settings
 
 ```sql
--- Create storage bucket for TCA assets
+-- Create storage bucket for BSUSA assets
 INSERT INTO storage.buckets (id, name, public) 
-VALUES ('tca-assets', 'tca-assets', true);
+VALUES ('bsusa-assets', 'bsusa-assets', true);
 
 -- Set up storage policies
 CREATE POLICY "Public Access" ON storage.objects
-FOR SELECT USING (bucket_id = 'tca-assets');
+FOR SELECT USING (bucket_id = 'bsusa-assets');
 
 CREATE POLICY "Authenticated users can upload" ON storage.objects
 FOR INSERT WITH CHECK (
-  bucket_id = 'tca-assets' 
+  bucket_id = 'bsusa-assets' 
   AND auth.role() = 'authenticated'
 );
 
 CREATE POLICY "Users can update own files" ON storage.objects
 FOR UPDATE USING (
-  bucket_id = 'tca-assets' 
+  bucket_id = 'bsusa-assets' 
   AND auth.uid()::text = (storage.foldername(name))[1]
 );
 ```
@@ -172,4 +172,4 @@ After Supabase is configured:
 
 - **Supabase Documentation**: [docs.supabase.com](https://docs.supabase.com)
 - **Supabase Community**: [github.com/supabase/supabase/discussions](https://github.com/supabase/supabase/discussions)
-- **TCA Project Issues**: Create an issue in the project repository
+- **BSUSA Project Issues**: Create an issue in the project repository

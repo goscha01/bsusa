@@ -1,8 +1,8 @@
 # Fix IAM Permissions for GitHub Actions User
 # This script updates the IAM policy to allow S3 operations
 
-$UserName = "tca-github-actions"
-$BucketName = "tca-website-20250813-145945"
+$UserName = "bsusa-github-actions"
+$BucketName = "bsusa-website-20250813-145945"
 
 Write-Host "Fixing IAM permissions for user: $UserName" -ForegroundColor Green
 Write-Host "S3 Bucket: $BucketName" -ForegroundColor Yellow
@@ -45,12 +45,12 @@ Write-Host "Creating updated IAM policy..." -ForegroundColor Yellow
 Write-Host "Updating IAM user policy..." -ForegroundColor Yellow
 
 # Update the IAM user policy
-aws iam put-user-policy --user-name $UserName --policy-name "TCAGitHubActionsPolicy" --policy-document file://updated-iam-policy.json
+aws iam put-user-policy --user-name $UserName --policy-name "BSUSAGitHubActionsPolicy" --policy-document file://updated-iam-policy.json
 
 Write-Host "Verifying policy update..." -ForegroundColor Yellow
 
 # Get the current policy to verify
-aws iam get-user-policy --user-name $UserName --policy-name "TCAGitHubActionsPolicy"
+aws iam get-user-policy --user-name $UserName --policy-name "BSUSAGitHubActionsPolicy"
 
 # Clean up
 Remove-Item "updated-iam-policy.json" -ErrorAction SilentlyContinue

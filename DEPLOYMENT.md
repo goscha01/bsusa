@@ -1,6 +1,6 @@
-# TCA Website Deployment Guide
+# BSUSA Website Deployment Guide
 
-This guide explains how to deploy your TCA website to AWS S3 with automatic CI/CD from GitHub.
+This guide explains how to deploy your BSUSA website to AWS S3 with automatic CI/CD from GitHub.
 
 ## 🚀 Quick Start
 
@@ -18,7 +18,7 @@ This guide explains how to deploy your TCA website to AWS S3 with automatic CI/C
    ```
 
 2. **GitHub repository set up**
-   - Your code should be in the `goscha01/tca` repository
+   - Your code should be in the `goscha01/bsusa` repository
    - You should have admin access to add secrets
 
 ### Option 1: Windows PowerShell (Recommended for Windows)
@@ -55,7 +55,7 @@ The deployment scripts automatically create:
 
 After running the deployment script, you'll get credentials to add to GitHub:
 
-1. Go to your GitHub repository: `https://github.com/goscha01/tca`
+1. Go to your GitHub repository: `https://github.com/goscha01/bsusa`
 2. Click **Settings** → **Secrets and variables** → **Actions**
 3. Add these repository secrets:
 
@@ -78,7 +78,7 @@ After running the deployment script, you'll get credentials to add to GitHub:
 ## 📁 File Structure
 
 ```
-TCA/
+BSUSA/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          # GitHub Actions workflow
@@ -223,4 +223,4 @@ After successful deployment:
 
 **Happy Deploying! 🚀**
 
-Your TCA website will now automatically deploy every time you push to the main branch!
+Your BSUSA website will now automatically deploy every time you push to the main branch!

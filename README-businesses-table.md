@@ -10,7 +10,7 @@ Run the SQL script to create the missing table.
 
 1. **Go to your Supabase Dashboard**
    - Navigate to [supabase.com](https://supabase.com)
-   - Sign in and open your TCA project
+   - Sign in and open your BSUSA project
 
 2. **Open SQL Editor**
    - Click on "SQL Editor" in the left sidebar
@@ -26,7 +26,7 @@ Run the SQL script to create the missing table.
    - You should see a new `businesses` table
 
 5. **Test the Dashboard**
-   - Refresh your TCA application
+   - Refresh your BSUSA application
    - The local storage message should disappear
    - Business profiles should now save to the database
    - Logo uploads should work properly

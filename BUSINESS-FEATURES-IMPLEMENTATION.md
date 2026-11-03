@@ -2,7 +2,7 @@
 
 ## 🎯 **What Has Been Built**
 
-Your TCA website now has a **complete business management system** with the following features:
+Your BSUSA website now has a **complete business management system** with the following features:
 
 ### **1. Simplified Signup Form with Company Information**
 - ✅ **Company Name Field**: Required field with "Companies" as default value
@@ -81,7 +81,7 @@ This will create:
 
 ### **2. Create Storage Bucket**
 In Supabase Dashboard → Storage:
-1. Create bucket named `tca-assets`
+1. Create bucket named `bsusa-assets`
 2. Set to **Public**
 3. Add storage policies (see script comments in the SQL file)
 
@@ -202,7 +202,7 @@ In Supabase Dashboard → Storage:
    - Check Supabase SQL Editor for any errors
 
 2. **"Storage bucket not found" errors**
-   - Create the `tca-assets` bucket in Supabase Storage
+   - Create the `bsusa-assets` bucket in Supabase Storage
    - Set it to public
 
 3. **"RLS policy violation" errors**
@@ -217,7 +217,7 @@ In Supabase Dashboard → Storage:
 
 ## **🎉 You're All Set!**
 
-Your TCA website now has a **complete business management system** that allows users to:
+Your BSUSA website now has a **complete business management system** that allows users to:
 
 - ✅ **Sign up with simplified company information** (name + optional URL)
 - ✅ **Create comprehensive business profiles** (directly in dashboard)

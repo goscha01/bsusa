@@ -1,4 +1,4 @@
--- Create the missing businesses table for TCA Application
+-- Create the missing businesses table for BSUSA Application
 -- Run this in your Supabase SQL Editor
 
 -- Create the businesses table

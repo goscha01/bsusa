@@ -56,7 +56,7 @@
 
 ### **2. Create Storage Bucket**
 In Supabase Dashboard → Storage:
-- Create bucket named `tca-assets`
+- Create bucket named `bsusa-assets`
 - Set to public
 - Add storage policies (see script comments)
 
@@ -135,7 +135,7 @@ In Supabase Dashboard → Storage:
 
 ## **Ready to Test!**
 
-Your TCA website now has a complete business management system. Users can:
+Your BSUSA website now has a complete business management system. Users can:
 - ✅ Sign up with company selection
 - ✅ Create comprehensive business profiles
 - ✅ Upload company logos

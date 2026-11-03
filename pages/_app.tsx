@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>TCA - Trusted Cleaners Association</title>
+        <title>BSUSA - Better Start USA Foundation, Inc.</title>
         <meta name="description" content="Professional cleaning services association providing training, certification, and industry standards." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         

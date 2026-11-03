@@ -206,17 +206,17 @@ export default function Contact() {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Find quick answers to common questions about TCA membership and services.
+              Find quick answers to common questions about BSUSA membership and services.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="card">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                How do I become a TCA member?
+                How do I become a BSUSA member?
               </h3>
               <p className="text-gray-600">
-                Becoming a TCA member is easy! Simply visit our membership page, choose your plan, 
+                Becoming a BSUSA member is easy! Simply visit our membership page, choose your plan, 
                 and complete the registration process. You'll receive immediate access to member benefits.
               </p>
             </div>
@@ -260,7 +260,7 @@ export default function Contact() {
               Visit Our Office
             </h2>
             <p className="text-lg text-gray-600">
-              Stop by our main office to meet our team and learn more about TCA.
+              Stop by our main office to meet our team and learn more about BSUSA.
             </p>
           </div>
 

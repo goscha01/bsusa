@@ -104,7 +104,7 @@ export default function Training() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              TCA Training Library
+              BSUSA Training Library
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Access professional development courses designed specifically for cleaning industry professionals. 
@@ -142,16 +142,16 @@ export default function Training() {
           <div className="text-center py-12">
             <BookOpen className="mx-auto h-16 w-16 text-gray-400 mb-4" />
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Join TSA to Access Full Training Library
+              Join BSUSA to Access Full Training Library
             </h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
               Our training library includes courses on advanced cleaning techniques, 
-              business management, customer service, and more. Become a TCA member 
+              business management, customer service, and more. Become a BSUSA member 
               to unlock all courses and track your progress.
             </p>
             <div className="space-x-4">
               <Link href="/login?mode=signup" className="btn-primary">
-                Join TSA Now
+                Join BSUSA Now
               </Link>
               <a href="/login" className="btn-outline">
                 Sign In

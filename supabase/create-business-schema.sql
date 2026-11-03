@@ -1,4 +1,4 @@
--- Business Schema Setup for TCA
+-- Business Schema Setup for BSUSA
 -- This script creates the necessary tables for companies and business profiles
 
 -- Step 1: Create companies table (for company selection during signup)
@@ -135,13 +135,13 @@ CREATE TRIGGER update_companies_updated_at
 
 -- Step 13: Create storage bucket for business assets
 -- Note: This needs to be run in Supabase dashboard or via API
--- INSERT INTO storage.buckets (id, name, public) VALUES ('tca-assets', 'tca-assets', true);
+-- INSERT INTO storage.buckets (id, name, public) VALUES ('bsusa-assets', 'bsusa-assets', true);
 
--- Step 14: Create storage policies for tca-assets bucket
+-- Step 14: Create storage policies for bsusa-assets bucket
 -- Note: These policies need to be created in Supabase dashboard or via API
--- CREATE POLICY "Public Access" ON storage.objects FOR SELECT USING (bucket_id = 'tca-assets');
--- CREATE POLICY "Authenticated users can upload" ON storage.objects FOR INSERT WITH CHECK (bucket_id = 'tca-assets' AND auth.role() = 'authenticated');
--- CREATE POLICY "Users can update their own files" ON storage.objects FOR UPDATE USING (bucket_id = 'tca-assets' AND auth.uid()::text = (storage.foldername(name))[1]);
+-- CREATE POLICY "Public Access" ON storage.objects FOR SELECT USING (bucket_id = 'bsusa-assets');
+-- CREATE POLICY "Authenticated users can upload" ON storage.objects FOR INSERT WITH CHECK (bucket_id = 'bsusa-assets' AND auth.role() = 'authenticated');
+-- CREATE POLICY "Users can update their own files" ON storage.objects FOR UPDATE USING (bucket_id = 'bsusa-assets' AND auth.uid()::text = (storage.foldername(name))[1]);
 
 -- Step 15: Verify the setup
 SELECT 'Companies table created successfully' as status;

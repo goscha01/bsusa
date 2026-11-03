@@ -1,11 +1,11 @@
-# Trusted Cleaners Association (TCA) Website
+# Better Start USA Foundation, Inc. (BSUSA) Website
 
-A professional Next.js website for the Trusted Cleaners Association, designed to establish credibility for professional cleaners through memberships, awards, and training programs.
+A professional Next.js website for the Better Start USA Foundation, Inc., designed to establish credibility for professional cleaners through memberships, awards, and training programs.
 
 ## 🚀 Features
 
 - **Public Pages**: Home, About, Membership, Training, Awards, Contact
-- **Secure Dashboard**: Logo upload, business link submission, TCA seal download, training library access
+- **Secure Dashboard**: Logo upload, business link submission, BSUSA seal download, training library access
 - **Stripe Integration**: Membership signup, award nomination fees, training subscriptions
 - **Award System**: Google review score integration & public winners page
 - **Training Materials**: Videos & PDFs with member-only access
@@ -26,7 +26,7 @@ A professional Next.js website for the Trusted Cleaners Association, designed to
 ## 📁 Project Structure
 
 ```
-TCA/
+BSUSA/
 ├── components/          # Reusable UI components
 │   ├── Layout.tsx      # Main layout wrapper
 │   ├── Header.tsx      # Navigation header
@@ -60,7 +60,7 @@ TCA/
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd TCA
+   cd BSUSA
    ```
 
 2. **Install dependencies**
@@ -194,7 +194,7 @@ The website is built with a mobile-first approach:
 
 ## 📄 License
 
-This project is proprietary software for the Trusted Cleaners Association.
+This project is proprietary software for the Better Start USA Foundation, Inc..
 
 ## 🆘 Support
 
@@ -213,4 +213,4 @@ For technical support or questions:
 
 ---
 
-**Built with ❤️ for the Trusted Cleaners Association**
+**Built with ❤️ for the Better Start USA Foundation, Inc.**

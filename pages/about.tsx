@@ -7,11 +7,11 @@ export default function About() {
     {
       icon: Shield,
       title: "Professional credibility boost",
-              description: "Gain instant trust with the official TSA Certified seal and membership status"
+              description: "Gain instant trust with the official BSUSA Certified seal and membership status"
     },
     {
       icon: Award,
-              title: "Official TSA seal for marketing",
+              title: "Official BSUSA seal for marketing",
       description: "Display your certification on your website, business cards, uniforms, and social media to show customers you're a verified, trusted provider"
     },
     {
@@ -37,7 +37,7 @@ export default function About() {
       <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            About Trusted Services Association
+            About Better Start USA Foundation, Inc.
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
             Promoting trust, transparency, and quality in services since 2024.
@@ -54,7 +54,7 @@ export default function About() {
               <Shield className="w-10 h-10 text-primary" />
             </div>
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-              The Trusted Services Association (TSA) is a professional organization dedicated to raising the standards of trust, 
+              The Better Start USA Foundation, Inc. (BSUSA) is a professional organization dedicated to raising the standards of trust, 
               transparency, and quality across the services industry. We help service providers—from cleaners to handymen, landscapers, and beyond—earn recognition, grow their 
               skills, and stand out from the competition.
             </p>
@@ -138,11 +138,11 @@ export default function About() {
               Ready to Join Our Community?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Become part of the Trusted Services Association and start building your professional reputation today.
+              Become part of the Better Start USA Foundation, Inc. and start building your professional reputation today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/login?mode=signup" className="btn-primary">
-                Join TSA Now
+                Join BSUSA Now
               </Link>
               <Link href="/contact" className="btn-outline">
                 Contact Us

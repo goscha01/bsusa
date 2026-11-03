@@ -1,4 +1,4 @@
--- Sample Data for TCA Application
+-- Sample Data for BSUSA Application
 -- Run this AFTER you have created at least one user account
 -- You can get a real user ID from the users table in your Supabase dashboard
 

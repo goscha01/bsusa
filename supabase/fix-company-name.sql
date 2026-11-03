@@ -1,4 +1,4 @@
--- Fix Company Name Issue for TCA Application
+-- Fix Company Name Issue for BSUSA Application
 -- Run this in your Supabase SQL Editor
 
 -- First, let's check what's in the users table

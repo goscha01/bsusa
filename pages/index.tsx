@@ -6,7 +6,7 @@ export default function Home() {
   const benefits = [
     {
       icon: Shield,
-      title: "Official TSA Seal for Your Website",
+      title: "Official BSUSA Seal for Your Website",
       description: "Display the trusted seal to build instant customer confidence"
     },
     {
@@ -53,13 +53,13 @@ export default function Home() {
       <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Join the Trusted Services Association (TSA)
+            Join the Better Start USA Foundation, Inc. (BSUSA)
           </h1>
           <h2 className="text-xl md:text-2xl font-light mb-8">
             Stand Out. Get Recognized. Grow Your Service Business.
           </h2>
           <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90">
-            Whether you're an independent professional or manage a full team, TSA membership gives you the credibility, recognition, and resources to succeed in the competitive services market.
+            Whether you're an independent professional or manage a full team, BSUSA membership gives you the credibility, recognition, and resources to succeed in the competitive services market.
           </p>
           <Link href="/membership#membership-plans" className="btn-secondary text-lg px-8 py-4">
             Join Now
@@ -72,7 +72,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose TSA Membership?
+              Why Choose BSUSA Membership?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Gain the tools and recognition you need to differentiate your business and attract more clients.
@@ -102,7 +102,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Featured TSA Members
+              Featured BSUSA Members
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Meet some of our outstanding members who are setting the standard for excellence in services.
@@ -146,7 +146,7 @@ export default function Home() {
             Ready to Join the Elite?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Start your journey with TSA today and join hundreds of trusted service professionals.
+            Start your journey with BSUSA today and join hundreds of trusted service professionals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/membership" className="btn-primary bg-white text-secondary hover:bg-gray-100">

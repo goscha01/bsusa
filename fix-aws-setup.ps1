@@ -1,7 +1,7 @@
 # Fix AWS Setup Script
 # This script completes the AWS setup that was partially done
 
-$BucketName = "tca-website-20250813-145334"
+$BucketName = "bsusa-website-20250813-145334"
 $Region = "us-east-1"
 
 Write-Host "Fixing AWS Setup for bucket: $BucketName" -ForegroundColor Green
@@ -37,7 +37,7 @@ $callerReference = Get-Date -Format 'yyyyMMdd-HHmmss'
 $distributionConfig = @"
 {
     "CallerReference": "$callerReference",
-    "Comment": "TCA Website Distribution",
+    "Comment": "BSUSA Website Distribution",
     "DefaultRootObject": "index.html",
     "Origins": {
         "Quantity": 1,
@@ -117,12 +117,12 @@ $iamPolicy = @"
 "@
 
 $iamPolicy | Out-File -FilePath "iam-policy.json" -Encoding UTF8 -NoNewline
-aws iam create-policy --policy-name "TCAGitHubActionsPolicy" --policy-document file://iam-policy.json
+aws iam create-policy --policy-name "BSUSAGitHubActionsPolicy" --policy-document file://iam-policy.json
 
 # Attach policy to user
 Write-Host "Attaching policy to IAM user..." -ForegroundColor Yellow
 $accountId = (aws sts get-caller-identity --query Account --output text).Trim()
-aws iam attach-user-policy --user-name "tca-github-actions" --policy-arn "arn:aws:iam::$accountId:policy/TCAGitHubActionsPolicy"
+aws iam attach-user-policy --user-name "bsusa-github-actions" --policy-arn "arn:aws:iam::$accountId:policy/BSUSAGitHubActionsPolicy"
 
 # Clean up temporary files
 Write-Host "Cleaning up temporary files..." -ForegroundColor Yellow

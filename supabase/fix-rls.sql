@@ -1,4 +1,4 @@
--- Fix RLS Policies for TCA Application
+-- Fix RLS Policies for BSUSA Application
 -- Run this in your Supabase SQL Editor after running the main schema.sql
 
 -- First, drop existing policies to avoid conflicts
