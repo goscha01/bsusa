@@ -179,11 +179,15 @@ export default function Contact() {
                     <p className="text-gray-700">
                       Better Start USA Foundation, Inc.
                       <br />
-                      Florida, United States
+                      c/o Georgiy Sayapin, Registered Agent
+                      <br />
+                      2501 S Ocean Dr, Apt 1104
+                      <br />
+                      Hollywood, FL 33019
                     </p>
                     <p className="text-sm text-gray-500 mt-2">
-                      For a specific physical address, please email first — our program sites are in
-                      different places depending on the workshop.
+                      Program sites are in different places depending on the workshop — email first
+                      if you plan to visit in person.
                     </p>
                   </div>
                 </div>
@@ -195,6 +199,10 @@ export default function Contact() {
                   <strong>Legal name:</strong> Better Start USA Foundation, Inc.
                   <br />
                   <strong>State of registration:</strong> Florida.
+                  <br />
+                  <strong>EIN:</strong> 43-2597508
+                  <br />
+                  <strong>Federal tax status:</strong> 501(c)(3) determination not yet issued
                 </p>
               </div>
             </div>

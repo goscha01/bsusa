@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import { Target, Users, HeartHandshake, ShieldCheck } from 'lucide-react';
+import { Target, Users, HeartHandshake, ShieldCheck, UserCircle, Scale } from 'lucide-react';
 
 export default function About() {
   return (
@@ -122,12 +122,73 @@ export default function About() {
               </div>
             </div>
 
+            <div className="mb-10">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Leadership</h2>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Our Board of Directors is responsible for the governance, finances, and strategic
+                direction of the Corporation under its Bylaws. Officers are elected annually by the
+                Board.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="card">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                    <UserCircle className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900">Georgiy Sayapin</h3>
+                  <p className="text-sm text-gray-600">President</p>
+                </div>
+                <div className="card">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                    <UserCircle className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900">Ruslan Zaichkou</h3>
+                  <p className="text-sm text-gray-600">Secretary</p>
+                </div>
+                <div className="card">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                    <UserCircle className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900">Tatsiana Astashonak</h3>
+                  <p className="text-sm text-gray-600">Treasurer</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="non-discrimination" className="card mb-10 scroll-mt-24">
+              <div className="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mb-5">
+                <Scale className="w-7 h-7 text-secondary" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-3">Non-discrimination</h2>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                Better Start USA Foundation, Inc. does not discriminate on the basis of race, color,
+                religion, national origin, ancestry, ethnicity, age, sex, gender identity or
+                expression, sexual orientation, marital status, disability, medical condition,
+                veteran status, or any other characteristic protected by law, in its programs, in
+                employment, in volunteer engagement, or in outreach.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                We endeavor to make our programs, materials, and services accessible to the people
+                we serve, and to make reasonable accommodation for people with disabilities. To
+                request an accommodation or report a concern, email{' '}
+                <a href="mailto:info@bsusa.org" className="text-primary hover:underline">
+                  info@bsusa.org
+                </a>
+                .
+              </p>
+            </div>
+
             <div className="card mb-10">
               <h2 className="text-xl font-bold text-gray-900 mb-3">Registration</h2>
               <p className="text-gray-700">
                 <strong>Legal name:</strong> Better Start USA Foundation, Inc.
                 <br />
                 <strong>State of registration:</strong> Florida.
+                <br />
+                <strong>EIN:</strong> 43-2597508
+                <br />
+                <strong>Federal tax status:</strong> organized to qualify as a public charity under Section 501(c)(3) of the Internal Revenue Code. IRS determination letter not yet issued.
+                <br />
+                <strong>Florida charitable solicitation registration:</strong> #CH[pending FDACS registration]
                 <br />
                 <strong>Contact:</strong>{' '}
                 <a href="mailto:info@bsusa.org" className="text-primary hover:underline">

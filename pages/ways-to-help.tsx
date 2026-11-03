@@ -45,6 +45,20 @@ export default function WaysToHelp() {
                 transfer. An online donation form will be published on this page as soon as it is
                 set up.
               </p>
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6 text-sm text-gray-700">
+                <p className="mb-2">
+                  <strong>Tax-deductibility:</strong> Better Start USA Foundation, Inc. is organized
+                  to qualify as a tax-exempt public charity under Section 501(c)(3) of the Internal
+                  Revenue Code. The IRS has not yet issued a determination letter. Once a favorable
+                  determination is issued, qualifying contributions are generally deductible as
+                  charitable contributions, and the IRS typically treats exempt status as effective
+                  back to the date of incorporation (if the application is timely filed). Donors
+                  should consult their own tax advisor for guidance on a specific contribution.
+                </p>
+                <p>
+                  <strong>EIN:</strong> 43-2597508
+                </p>
+              </div>
               <a href="mailto:info@bsusa.org?subject=Donation" className="btn-primary inline-flex items-center">
                 <Mail className="w-4 h-4 mr-2" />
                 Email us to donate

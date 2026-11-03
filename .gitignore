@@ -56,3 +56,11 @@ jspm_packages/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Claude Code memory (local, not for repo)
+memory/
+AGENT-BRIEF.md
+bsusa-redesign.patch

@@ -92,11 +92,32 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-          <p className="text-gray-300 mb-1">
-            Better Start USA Foundation, Inc. — a nonprofit registered in the State of Florida.
-          </p>
-          <p className="text-gray-400">
+        <div className="border-t border-gray-800 mt-8 pt-8 text-sm">
+          <div className="text-center mb-4">
+            <p className="text-gray-300 mb-1">
+              Better Start USA Foundation, Inc. — a nonprofit registered in the State of Florida.
+            </p>
+            <p className="text-gray-300">
+              EIN: 43-2597508
+            </p>
+            <p className="text-gray-400 mt-2">
+              <Link href="/about#non-discrimination" className="hover:text-white underline">
+                Non-discrimination policy
+              </Link>
+            </p>
+          </div>
+
+          <div className="bg-gray-800 border border-gray-700 rounded p-4 text-xs text-gray-300 leading-relaxed max-w-3xl mx-auto mb-4">
+            <p className="font-semibold text-gray-200 mb-1">Florida Charitable Solicitation Disclosure</p>
+            <p>
+              A COPY OF THE OFFICIAL REGISTRATION AND FINANCIAL INFORMATION MAY BE OBTAINED FROM THE
+              DIVISION OF CONSUMER SERVICES BY CALLING TOLL-FREE 1-800-HELP-FLA (435-7352) WITHIN THE
+              STATE OR AT www.FloridaConsumerHelp.com. REGISTRATION DOES NOT IMPLY ENDORSEMENT,
+              APPROVAL, OR RECOMMENDATION BY THE STATE. Florida Registration #CH[pending — update before launch].
+            </p>
+          </div>
+
+          <p className="text-gray-400 text-center">
             © {year} Better Start USA Foundation, Inc. All rights reserved.
           </p>
         </div>
