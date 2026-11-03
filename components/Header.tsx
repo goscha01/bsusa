@@ -1,142 +1,128 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import Image from 'next/image';
+import { LogoLockup } from './Logo';
+
+export const programs = [
+  { href: '/programs/newcomer-orientation', label: 'Newcomer Orientation' },
+  { href: '/programs/career-pathways', label: 'Career Pathways' },
+  { href: '/programs/hands-on-trade-training', label: 'Hands-On Trade Training' },
+  { href: '/programs/small-business-support', label: 'Small Business Support' },
+];
+
+const links = [
+  { href: '/', label: 'Home', match: (p: string) => p === '/' },
+  { href: '/about', label: 'About', match: (p: string) => p.startsWith('/about') },
+  { href: '/articles', label: 'Articles', match: (p: string) => p.startsWith('/articles') },
+  { href: '/ways-to-help', label: 'Ways to Help', match: (p: string) => p.startsWith('/ways-to-help') },
+  { href: '/contact', label: 'Contact', match: (p: string) => p.startsWith('/contact') },
+];
+
+function navClass(active: boolean) {
+  return `text-[15px] font-semibold py-3 border-b-2 transition-colors ${
+    active ? 'text-navy border-sunrise' : 'text-[#3A4658] border-transparent hover:text-navy'
+  }`;
+}
 
 export default function Header() {
+  const { pathname } = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProgramsOpen, setIsProgramsOpen] = useState(false);
-
-  const programs = [
-    { href: '/programs/newcomer-orientation', label: 'Newcomer Orientation' },
-    { href: '/programs/career-pathways', label: 'Career Pathways' },
-    { href: '/programs/hands-on-trade-training', label: 'Hands-On Trade Training' },
-    { href: '/programs/small-business-support', label: 'Small Business Support' },
-  ];
+  const programsActive = pathname.startsWith('/programs');
+  const close = () => setIsMobileMenuOpen(false);
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <Image
-                src="/bsusa-logo.svg"
-                alt="BSUSA Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto"
-              />
-              <div className="flex items-center space-x-2">
-                <span className="text-2xl font-bold text-gray-900 leading-none">BSUSA</span>
-                <div className="flex flex-col text-xs text-gray-600 leading-tight justify-center">
-                  <span>Better Start USA</span>
-                  <span>Foundation, Inc.</span>
-                </div>
-              </div>
-            </Link>
-          </div>
+    <header className="bg-white border-b border-line">
+      <div className="container-page flex items-center justify-between gap-6 py-3.5">
+        <Link href="/" aria-label="BSUSA home">
+          <LogoLockup />
+        </Link>
 
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-gray-700 hover:text-primary px-2 py-2 text-sm font-medium">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-primary px-2 py-2 text-sm font-medium">
-              About
-            </Link>
-            <div
-              className="relative"
-              onMouseEnter={() => setIsProgramsOpen(true)}
-              onMouseLeave={() => setIsProgramsOpen(false)}
-            >
-              <button
-                className="text-gray-700 hover:text-primary px-2 py-2 text-sm font-medium inline-flex items-center"
-                onClick={() => setIsProgramsOpen(!isProgramsOpen)}
-                aria-haspopup="true"
-                aria-expanded={isProgramsOpen}
-              >
-                Programs
-                <ChevronDown className="w-4 h-4 ml-1" />
-              </button>
-              {isProgramsOpen && (
-                <div className="absolute left-0 mt-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-20">
-                  {programs.map((p) => (
-                    <Link
-                      key={p.href}
-                      href={p.href}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary"
-                    >
-                      {p.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-            <Link href="/articles" className="text-gray-700 hover:text-primary px-2 py-2 text-sm font-medium">
-              Articles
-            </Link>
-            <Link href="/ways-to-help" className="text-gray-700 hover:text-primary px-2 py-2 text-sm font-medium">
-              Ways to Help
-            </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-primary px-2 py-2 text-sm font-medium">
-              Contact
-            </Link>
-          </nav>
-
-          <div className="hidden md:flex items-center space-x-4">
-            <Link href="/ways-to-help#donate" className="btn-primary">
-              Donate
-            </Link>
-          </div>
-
-          <div className="md:hidden">
+        <nav aria-label="Main" className="hidden lg:flex items-center gap-7">
+          <Link href="/" className={navClass(pathname === '/')}>
+            Home
+          </Link>
+          <Link href="/about" className={navClass(pathname.startsWith('/about'))}>
+            About
+          </Link>
+          <div
+            className="relative"
+            onMouseEnter={() => setIsProgramsOpen(true)}
+            onMouseLeave={() => setIsProgramsOpen(false)}
+          >
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700 hover:text-primary p-2"
-              aria-label="Toggle menu"
+              className={`${navClass(programsActive)} inline-flex items-center gap-1`}
+              onClick={() => setIsProgramsOpen(!isProgramsOpen)}
+              aria-haspopup="true"
+              aria-expanded={isProgramsOpen}
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              Programs
+              <ChevronDown className="w-4 h-4" />
             </button>
+            {isProgramsOpen && (
+              <div className="absolute left-0 top-full w-72 bg-white border border-line rounded-2xl shadow-lg py-2 z-20">
+                {programs.map((p, i) => (
+                  <Link
+                    key={p.href}
+                    href={p.href}
+                    className="flex items-center gap-3 px-4 py-2.5 text-[15px] font-semibold text-ink hover:bg-mist hover:text-navy"
+                  >
+                    <span className="w-6 h-6 rounded-full bg-sunrise-tint text-sunrise-dark text-xs font-extrabold flex items-center justify-center">
+                      {i + 1}
+                    </span>
+                    {p.label}
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
+          {links.slice(2).map((l) => (
+            <Link key={l.href} href={l.href} className={navClass(l.match(pathname))}>
+              {l.label}
+            </Link>
+          ))}
+          <Link href="/ways-to-help#donate" className="btn-primary ml-1">
+            Donate
+          </Link>
+        </nav>
+
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="lg:hidden text-navy p-2"
+          aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
+        >
+          {isMobileMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+        </button>
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-            <Link href="/" className="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium" onClick={() => setIsMobileMenuOpen(false)}>
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium" onClick={() => setIsMobileMenuOpen(false)}>
-              About
-            </Link>
-            <div className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wide">Programs</div>
+        <nav aria-label="Mobile" className="lg:hidden border-t border-line bg-white">
+          <div className="container-page py-3 flex flex-col">
+            {links.slice(0, 2).map((l) => (
+              <Link key={l.href} href={l.href} onClick={close} className="py-3 text-base font-semibold text-ink hover:text-navy">
+                {l.label}
+              </Link>
+            ))}
+            <div className="pt-3 pb-1 eyebrow text-sunrise-dark">Programs</div>
             {programs.map((p) => (
-              <Link
-                key={p.href}
-                href={p.href}
-                className="text-gray-700 hover:text-primary block px-6 py-2 text-base font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
+              <Link key={p.href} href={p.href} onClick={close} className="py-2.5 pl-4 text-base font-semibold text-ink hover:text-navy">
                 {p.label}
               </Link>
             ))}
-            <Link href="/articles" className="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium" onClick={() => setIsMobileMenuOpen(false)}>
-              Articles
-            </Link>
-            <Link href="/ways-to-help" className="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium" onClick={() => setIsMobileMenuOpen(false)}>
-              Ways to Help
-            </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium" onClick={() => setIsMobileMenuOpen(false)}>
-              Contact
-            </Link>
-            <div className="pt-4 border-t border-gray-200">
-              <Link href="/ways-to-help#donate" className="btn-primary block text-center" onClick={() => setIsMobileMenuOpen(false)}>
+            {links.slice(2).map((l) => (
+              <Link key={l.href} href={l.href} onClick={close} className="py-3 text-base font-semibold text-ink hover:text-navy">
+                {l.label}
+              </Link>
+            ))}
+            <div className="pt-4 mt-2 border-t border-line">
+              <Link href="/ways-to-help#donate" onClick={close} className="btn-primary w-full">
                 Donate
               </Link>
             </div>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );

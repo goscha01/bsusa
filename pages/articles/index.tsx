@@ -1,8 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { articles } from '../../lib/articles';
+import { articles, formatArticleDate } from '../../lib/articles';
+import PageHero from '../../components/PageHero';
 
 export default function ArticlesIndex() {
   const sorted = [...articles].sort((a, b) => b.date.localeCompare(a.date));
@@ -17,48 +18,39 @@ export default function ArticlesIndex() {
         />
       </Head>
 
-      <div className="min-h-screen">
-        <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Articles</h1>
-            <p className="text-lg md:text-xl opacity-95 max-w-3xl">
-              Short, specific pieces about our programs and the questions newcomers ask us most often.
-            </p>
-          </div>
-        </section>
+      <PageHero
+        eyebrow="Articles"
+        title="Articles"
+        intro="Short, specific pieces about our programs and the questions newcomers ask us most often."
+      />
 
-        <section className="py-16">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ul className="space-y-6">
-              {sorted.map((a) => (
-                <li key={a.slug}>
-                  <Link
-                    href={`/articles/${a.slug}`}
-                    className="block card hover:shadow-xl transition-shadow"
-                  >
-                    <div className="text-sm text-gray-500 mb-2">
-                      <time dateTime={a.date}>
-                        {new Date(a.date).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                        })}
-                      </time>
-                      <span className="mx-2">·</span>
-                      <span>{a.program}</span>
-                    </div>
-                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">{a.title}</h2>
-                    <p className="text-gray-600 mb-3">{a.description}</p>
-                    <span className="text-primary font-medium inline-flex items-center">
-                      Read article <ArrowRight className="w-4 h-4 ml-1" />
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      </div>
+      <section>
+        <ul className="container-page pt-[72px] pb-[104px] grid grid-cols-[repeat(auto-fit,minmax(min(420px,100%),1fr))] gap-6">
+          {sorted.map((a) => (
+            <li key={a.slug}>
+              <Link
+                href={`/articles/${a.slug}`}
+                className="group h-full border border-line rounded-[20px] p-9 flex flex-col gap-4 hover:border-sunrise hover:shadow-md transition"
+              >
+                <div className="flex flex-wrap items-center gap-x-3.5 gap-y-2.5">
+                  <span className="bg-sunrise-tint text-sunrise-deep rounded-full px-3.5 py-1.5 text-[13px] font-extrabold">
+                    {a.program}
+                  </span>
+                  <time dateTime={a.date} className="text-sm font-semibold text-muted">
+                    {formatArticleDate(a.date)}
+                  </time>
+                </div>
+                <h2 className="text-[26px] font-extrabold leading-tight tracking-[-0.01em] text-navy">{a.title}</h2>
+                <p className="leading-[1.65] text-slate flex-grow">{a.description}</p>
+                <span className="inline-flex items-center gap-2 text-[15px] font-extrabold text-navy">
+                  Read article
+                  <ArrowRight className="w-[18px] h-[18px] text-sunrise transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   );
 }

@@ -13,11 +13,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         {/* Favicon */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
-        <link rel="apple-touch-icon" href="/favicon.svg?v=4" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=5" />
+        <link rel="apple-touch-icon" href="/favicon.svg?v=5" />
         
         {/* Theme color for mobile browsers */}
-        <meta name="theme-color" content="#1E88E5" />
+        <meta name="theme-color" content="#1B365D" />
       </Head>
       
       <AuthProvider>

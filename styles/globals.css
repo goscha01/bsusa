@@ -1,45 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+  body {
+    @apply text-ink bg-white;
   }
 }
 
 @layer components {
+  /* Buttons — pill shaped, brand colors */
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 bg-sunrise hover:bg-sunrise-light text-navy-dark font-extrabold py-3 px-6 rounded-full transition-colors duration-200;
   }
-  
+
   .btn-primary:disabled {
-    @apply bg-gray-400 cursor-not-allowed;
+    @apply bg-gray-300 text-gray-600 cursor-not-allowed;
   }
-  
+
+  .btn-navy {
+    @apply inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy-dark text-white font-bold py-3 px-6 rounded-full transition-colors duration-200;
+  }
+
   .btn-secondary {
-    @apply bg-secondary hover:bg-secondary-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply btn-navy;
   }
-  
+
   .btn-outline {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 border-2 border-navy text-navy hover:bg-navy hover:text-white font-bold py-[10px] px-6 rounded-full transition-colors duration-200;
   }
-  
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy font-bold py-[10px] px-6 rounded-full transition-colors duration-200;
+  }
+
   .btn-danger {
-    @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-200;
   }
-  
+
   .btn-danger:disabled {
     @apply bg-red-400 cursor-not-allowed;
   }
-  
+
   .card {
-    @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+    @apply bg-white rounded-2xl border border-line p-6;
   }
-  
+
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
+    @apply w-full px-4 py-3 border border-[#C5CEDB] rounded-[10px] bg-white text-ink focus:ring-2 focus:ring-sunrise focus:border-transparent outline-none transition-all duration-200;
+  }
+
+  .container-page {
+    @apply max-w-[1200px] mx-auto px-6;
+  }
+
+  .eyebrow {
+    @apply text-[13px] font-extrabold tracking-[0.16em] uppercase;
+  }
+
+  /* Long-form article text (no typography plugin installed) */
+  .article-body {
+    @apply text-[18px] leading-[1.75] text-ink;
+  }
+  .article-body > * + * {
+    @apply mt-5;
+  }
+  .article-body > p:first-child {
+    @apply text-[21px] leading-[1.65] text-navy;
+  }
+  .article-body h2 {
+    @apply mt-12 text-[30px] font-extrabold tracking-tight leading-tight text-navy;
+  }
+  .article-body ul {
+    @apply list-disc pl-6 space-y-3.5;
+  }
+  .article-body strong {
+    @apply text-navy;
+  }
+  .article-body a {
+    @apply font-bold text-navy underline decoration-sunrise underline-offset-4;
   }
 }

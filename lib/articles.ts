@@ -40,3 +40,14 @@ export const articles: ArticleMeta[] = [
     program: 'Small Business Support',
   },
 ];
+
+/** Formats a YYYY-MM-DD date as "November 2, 2026" without time-zone day shifts. */
+export function formatArticleDate(date: string): string {
+  const [y, m, d] = date.split('-').map(Number);
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
+}

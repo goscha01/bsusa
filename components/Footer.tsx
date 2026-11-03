@@ -1,114 +1,63 @@
 import React from 'react';
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
+import { LogoLockup } from './Logo';
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const linkClass = 'text-[15px] text-[#C9D4E5] hover:text-white transition-colors';
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-2">
-            <div className="mb-4">
-              <div className="flex items-baseline space-x-2">
-                <span className="text-2xl font-bold">BSUSA</span>
-                <span className="text-sm text-gray-400">Better Start USA Foundation, Inc.</span>
-              </div>
-            </div>
-            <p className="text-gray-300 mb-4 max-w-md">
+    <footer className="bg-navy-dark text-white">
+      <div className="container-page pt-16 pb-8 flex flex-col gap-10">
+        <div className="flex flex-wrap gap-x-16 gap-y-10">
+          <div className="flex-[2_1_340px] flex flex-col gap-5">
+            <LogoLockup tone="dark" size={52} />
+            <p className="max-w-[440px] text-[15px] leading-relaxed text-[#C9D4E5]">
               Adult education for immigrants and refugees in the United States: workshops on American life
               and work, career guidance, hands-on trade training, and small business support — so newcomers
               can become self-sufficient.
             </p>
-            <div className="flex space-x-4">
+            <div>
               <Link href="/ways-to-help#donate" className="btn-primary">
                 Donate
               </Link>
             </div>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Explore</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
-                  About &amp; Mission
-                </Link>
-              </li>
-              <li>
-                <Link href="/programs/newcomer-orientation" className="text-gray-300 hover:text-white transition-colors">
-                  Newcomer Orientation
-                </Link>
-              </li>
-              <li>
-                <Link href="/programs/career-pathways" className="text-gray-300 hover:text-white transition-colors">
-                  Career Pathways
-                </Link>
-              </li>
-              <li>
-                <Link href="/programs/hands-on-trade-training" className="text-gray-300 hover:text-white transition-colors">
-                  Hands-On Trade Training
-                </Link>
-              </li>
-              <li>
-                <Link href="/programs/small-business-support" className="text-gray-300 hover:text-white transition-colors">
-                  Small Business Support
-                </Link>
-              </li>
-              <li>
-                <Link href="/articles" className="text-gray-300 hover:text-white transition-colors">
-                  Articles
-                </Link>
-              </li>
-            </ul>
+          <div className="flex-[1_1_200px] flex flex-col gap-3.5">
+            <h3 className="eyebrow text-sunrise-light mb-1">Explore</h3>
+            <Link href="/about" className={linkClass}>About &amp; Mission</Link>
+            <Link href="/programs/newcomer-orientation" className={linkClass}>Newcomer Orientation</Link>
+            <Link href="/programs/career-pathways" className={linkClass}>Career Pathways</Link>
+            <Link href="/programs/hands-on-trade-training" className={linkClass}>Hands-On Trade Training</Link>
+            <Link href="/programs/small-business-support" className={linkClass}>Small Business Support</Link>
+            <Link href="/articles" className={linkClass}>Articles</Link>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Get in Touch</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-primary" />
-                <a href="mailto:info@bsusa.org" className="text-gray-300 hover:text-white transition-colors">
-                  info@bsusa.org
-                </a>
-              </div>
-              <div>
-                <Link href="/ways-to-help#volunteer" className="text-gray-300 hover:text-white transition-colors">
-                  Volunteer with us
-                </Link>
-              </div>
-              <div>
-                <Link href="/ways-to-help#partner" className="text-gray-300 hover:text-white transition-colors">
-                  Partner with us
-                </Link>
-              </div>
-              <div>
-                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
-                  Contact page
-                </Link>
-              </div>
-            </div>
+          <div className="flex-[1_1_200px] flex flex-col gap-3.5">
+            <h3 className="eyebrow text-sunrise-light mb-1">Get in touch</h3>
+            <a href="mailto:info@bsusa.org" className={`${linkClass} inline-flex items-center gap-2`}>
+              <Mail className="h-4 w-4 text-sunrise-light" /> info@bsusa.org
+            </a>
+            <Link href="/ways-to-help#volunteer" className={linkClass}>Volunteer with us</Link>
+            <Link href="/ways-to-help#partner" className={linkClass}>Partner with us</Link>
+            <Link href="/contact" className={linkClass}>Contact page</Link>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-sm">
-          <div className="text-center mb-4">
-            <p className="text-gray-300 mb-1">
-              Better Start USA Foundation, Inc. — a nonprofit registered in the State of Florida.
-            </p>
-            <p className="text-gray-300">
-              EIN: 43-2597508
-            </p>
-            <p className="text-gray-400 mt-2">
-              <Link href="/about#non-discrimination" className="hover:text-white underline">
-                Non-discrimination policy
-              </Link>
-            </p>
+        <div className="border-t border-[#2A3F5F] pt-6 flex flex-col gap-5 text-[13px] text-[#A9B6CA]">
+          <div className="flex flex-wrap justify-between gap-x-6 gap-y-2">
+            <span>
+              Better Start USA Foundation, Inc. — a nonprofit registered in the State of Florida. EIN: 43-2597508.
+            </span>
+            <Link href="/about#non-discrimination" className="hover:text-white underline">
+              Non-discrimination policy
+            </Link>
           </div>
 
-          <div className="bg-gray-800 border border-gray-700 rounded p-4 text-xs text-gray-300 leading-relaxed max-w-3xl mx-auto mb-4">
-            <p className="font-semibold text-gray-200 mb-1">Florida Charitable Solicitation Disclosure</p>
+          <div className="rounded border border-[#2A3F5F] bg-[#0B1A32] p-4 text-[12px] leading-relaxed">
+            <p className="font-semibold text-[#C9D4E5] mb-1">Florida Charitable Solicitation Disclosure</p>
             <p>
               A COPY OF THE OFFICIAL REGISTRATION AND FINANCIAL INFORMATION MAY BE OBTAINED FROM THE
               DIVISION OF CONSUMER SERVICES BY CALLING TOLL-FREE 1-800-HELP-FLA (435-7352) WITHIN THE
@@ -117,7 +66,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <p className="text-gray-400 text-center">
+          <p className="text-center text-[#A9B6CA]">
             © {year} Better Start USA Foundation, Inc. All rights reserved.
           </p>
         </div>
