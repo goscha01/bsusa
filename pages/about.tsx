@@ -28,8 +28,8 @@ const values = [
   },
 ];
 
-const officers = [
-  { name: 'Georgiy Sayapin', role: 'President' },
+const officers: { name: string; role: string; photo?: string }[] = [
+  { name: 'Georgiy Sayapin', role: 'President', photo: '/leadership/georgiy-sayapin.jpg' },
   { name: 'Ruslan Zaichkou', role: 'Secretary' },
   { name: 'Tatsiana Astashonak', role: 'Treasurer' },
 ];
@@ -175,10 +175,18 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {officers.map((o) => (
-              <div key={o.name} className="bg-mist rounded-2xl p-8 flex flex-col gap-3.5">
-                <div className="w-12 h-12 bg-sunrise-tint rounded-full flex items-center justify-center">
-                  <UserCircle className="w-7 h-7 text-sunrise-dark" aria-hidden="true" />
-                </div>
+              <div key={o.name} className="bg-mist rounded-2xl p-8 flex flex-col gap-4">
+                {o.photo ? (
+                  <img
+                    src={o.photo}
+                    alt={`${o.name}, ${o.role}`}
+                    className="w-24 h-24 rounded-full object-cover ring-4 ring-sunrise-tint"
+                  />
+                ) : (
+                  <div className="w-24 h-24 bg-sunrise-tint rounded-full flex items-center justify-center">
+                    <UserCircle className="w-12 h-12 text-sunrise-dark" aria-hidden="true" />
+                  </div>
+                )}
                 <div className="flex flex-col gap-0.5">
                   <h3 className="text-[20px] font-extrabold text-navy">{o.name}</h3>
                   <p className="text-sm text-slate">{o.role}</p>
