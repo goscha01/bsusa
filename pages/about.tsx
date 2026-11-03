@@ -30,8 +30,8 @@ const values = [
 
 const officers: { name: string; role: string; photo?: string }[] = [
   { name: 'Georgiy Sayapin', role: 'President', photo: '/leadership/georgiy-sayapin.jpg' },
-  { name: 'Ruslan Zaichkou', role: 'Secretary' },
-  { name: 'Tatsiana Astashonak', role: 'Treasurer' },
+  { name: 'Ruslan Zaichkou', role: 'Secretary', photo: '/leadership/ruslan-zaichkou.jpg' },
+  { name: 'Tatsiana Astashonak', role: 'Treasurer', photo: '/leadership/tatsiana-astashonak.jpg' },
 ];
 
 export default function About() {
